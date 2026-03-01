@@ -11,7 +11,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Header -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +31,6 @@
             android:gravity="center"
             android:paddingBottom="16dp" />
 
-        <!-- Status Bar -->
         <TextView
             android:id="@+id/tv_status"
             android:layout_width="match_parent"
@@ -45,14 +43,14 @@
             android:layout_marginBottom="16dp"
             android:background="#7F0000" />
 
-        <!-- Bot Toggle -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="#1E2A3A"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:paddingHorizontal="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:layout_marginBottom="8dp">
 
             <TextView
@@ -72,14 +70,12 @@
                 android:trackTint="#333333" />
         </LinearLayout>
 
-        <!-- Section: Identity -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="BOT IDENTITY"
             android:textColor="#FF6B35"
             android:textSize="11sp"
-            android:letterSpacing="0.15"
             android:paddingTop="12dp"
             android:paddingBottom="4dp" />
 
@@ -88,7 +84,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bot Name (e.g. Priya, Arjun, Kavita)"
-            android:hintTextColor="#666666"
             android:textColor="#FFFFFF"
             android:background="#1E2A3A"
             android:padding="12dp"
@@ -100,21 +95,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Your Name (who owns this phone) *required"
-            android:hintTextColor="#666666"
             android:textColor="#FFFFFF"
             android:background="#1E2A3A"
             android:padding="12dp"
             android:layout_marginBottom="8dp"
             android:inputType="textPersonName" />
 
-        <!-- Section: Messages -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CUSTOM MESSAGES"
             android:textColor="#FF6B35"
             android:textSize="11sp"
-            android:letterSpacing="0.15"
             android:paddingTop="12dp"
             android:paddingBottom="4dp" />
 
@@ -123,7 +115,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Custom greeting (leave blank for auto). Use {name} and {bot}"
-            android:hintTextColor="#666666"
             android:textColor="#FFFFFF"
             android:background="#1E2A3A"
             android:padding="12dp"
@@ -136,7 +127,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Goodbye/away message (leave blank for auto)"
-            android:hintTextColor="#666666"
             android:textColor="#FFFFFF"
             android:background="#1E2A3A"
             android:padding="12dp"
@@ -144,14 +134,12 @@
             android:minLines="2"
             android:inputType="textMultiLine" />
 
-        <!-- Section: Voice -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="VOICE SETTINGS"
             android:textColor="#FF6B35"
             android:textSize="11sp"
-            android:letterSpacing="0.15"
             android:paddingTop="12dp"
             android:paddingBottom="4dp" />
 
@@ -198,7 +186,6 @@
             android:thumbTint="#FF6B35"
             android:layout_marginBottom="16dp" />
 
-        <!-- Buttons -->
         <Button
             android:id="@+id/btn_test_voice"
             android:layout_width="match_parent"
