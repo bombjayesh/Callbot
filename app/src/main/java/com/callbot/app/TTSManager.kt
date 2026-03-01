@@ -9,16 +9,15 @@ import java.util.Locale
 class TTSManager(private val context: Context) {
 
     companion object {
-        // Indian locale codes
         val INDIAN_LOCALES = arrayOf(
-            Locale("hi", "IN"),   // Hindi
-            Locale("en", "IN"),   // English (India)
-            Locale("ta", "IN"),   // Tamil
-            Locale("te", "IN"),   // Telugu
-            Locale("bn", "IN"),   // Bengali
-            Locale("mr", "IN"),   // Marathi
-            Locale("gu", "IN"),   // Gujarati
-            Locale("kn", "IN"),   // Kannada
+            Locale("hi", "IN"),
+            Locale("en", "IN"),
+            Locale("ta", "IN"),
+            Locale("te", "IN"),
+            Locale("bn", "IN"),
+            Locale("mr", "IN"),
+            Locale("gu", "IN"),
+            Locale("kn", "IN"),
         )
     }
 
@@ -31,8 +30,7 @@ class TTSManager(private val context: Context) {
             if (status == TextToSpeech.SUCCESS) {
                 isReady = true
                 Log.d("TTSManager", "TTS initialized successfully")
-                // Execute any pending speech
-                pendingQueue.forEach { it.invoke() }
+                pendingQueue.forEach { action: () -> Unit -> action() }
                 pendingQueue.clear()
             } else {
                 Log.e("TTSManager", "TTS initialization failed")
@@ -47,10 +45,9 @@ class TTSManager(private val context: Context) {
         pitch: Float = 1.0f,
         onComplete: (() -> Unit)? = null
     ) {
-        val speakAction = {
+        val speakAction: () -> Unit = {
             val locale = INDIAN_LOCALES.getOrElse(languageIndex) { Locale("en", "IN") }
 
-            // Try to set the locale, fall back to en-IN
             val result = tts?.setLanguage(locale) ?: TextToSpeech.LANG_NOT_SUPPORTED
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.w("TTSManager", "Language not supported: $locale, falling back to en-IN")
