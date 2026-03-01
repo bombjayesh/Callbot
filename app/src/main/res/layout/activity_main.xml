@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D1117"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🤖 CallBot India"
+            android:textSize="28sp"
+            android:textColor="#FF6B35"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI Call Answering Bot with Indian Voices"
+            android:textSize="13sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Status Bar -->
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔴 Bot is INACTIVE"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:padding="12dp"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"
+            android:background="#7F0000" />
+
+        <!-- Bot Toggle -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#1E2A3A"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enable Call Bot"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/switch_bot_enabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:thumbTint="#FF6B35"
+                android:trackTint="#333333" />
+        </LinearLayout>
+
+        <!-- Section: Identity -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BOT IDENTITY"
+            android:textColor="#FF6B35"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_bot_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bot Name (e.g. Priya, Arjun, Kavita)"
+            android:hintTextColor="#666666"
+            android:textColor="#FFFFFF"
+            android:background="#1E2A3A"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/et_owner_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Your Name (who owns this phone) *required"
+            android:hintTextColor="#666666"
+            android:textColor="#FFFFFF"
+            android:background="#1E2A3A"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:inputType="textPersonName" />
+
+        <!-- Section: Messages -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CUSTOM MESSAGES"
+            android:textColor="#FF6B35"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp" />
+
+        <EditText
+            android:id="@+id/et_greeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Custom greeting (leave blank for auto). Use {name} and {bot}"
+            android:hintTextColor="#666666"
+            android:textColor="#FFFFFF"
+            android:background="#1E2A3A"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:minLines="2"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/et_away_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Goodbye/away message (leave blank for auto)"
+            android:hintTextColor="#666666"
+            android:textColor="#FFFFFF"
+            android:background="#1E2A3A"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"
+            android:minLines="2"
+            android:inputType="textMultiLine" />
+
+        <!-- Section: Voice -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VOICE SETTINGS"
+            android:textColor="#FF6B35"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinner_language"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#1E2A3A"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Speaking Speed"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:paddingBottom="4dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="#FF6B35"
+            android:thumbTint="#FF6B35"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voice Pitch"
+            android:textColor="#AAAAAA"
+            android:textSize="13sp"
+            android:paddingBottom="4dp" />
+
+        <SeekBar
+            android:id="@+id/seekbar_pitch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="50"
+            android:progressTint="#FF6B35"
+            android:thumbTint="#FF6B35"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Buttons -->
+        <Button
+            android:id="@+id/btn_test_voice"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="🔊 Test Voice"
+            android:backgroundTint="#1E2A3A"
+            android:textColor="#FF6B35"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_set_default"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="📞 Set as Default Dialer"
+            android:backgroundTint="#1E3040"
+            android:textColor="#4DA8DA"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="✓ SAVE SETTINGS"
+            android:backgroundTint="#FF6B35"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
+
+    </LinearLayout>
+</ScrollView>
