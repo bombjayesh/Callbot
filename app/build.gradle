@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk 34
+    namespace "com.callbot.app"
 
     defaultConfig {
         applicationId "com.callbot.app"
