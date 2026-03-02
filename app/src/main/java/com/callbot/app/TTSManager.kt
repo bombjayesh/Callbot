@@ -40,7 +40,7 @@ class TTSManager(private val context: Context) {
 
     fun speak(
         text: String,
-        languageIndex: Int = 1,
+        languageIndex: Int = 0,
         speed: Float = 1.0f,
         pitch: Float = 1.0f,
         onComplete: (() -> Unit)? = null
