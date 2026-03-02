@@ -51,7 +51,7 @@ class TTSManager(private val context: Context) {
             val result = tts?.setLanguage(locale) ?: TextToSpeech.LANG_NOT_SUPPORTED
             if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                 Log.w("TTSManager", "Language not supported: $locale, falling back to en-IN")
-                tts?.setLanguage(Locale("en", "IN"))
+                tts?.setLanguage(Locale("hi", "IN"))
             }
 
             tts?.setSpeechRate(speed.coerceIn(0.5f, 2.0f))
